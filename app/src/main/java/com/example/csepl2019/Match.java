@@ -1,6 +1,6 @@
 package com.example.csepl2019;
 
-public class Over {
+public class Match {
 
 
     private boolean whichTeam;
@@ -15,7 +15,9 @@ public class Over {
     private String tossStatus;
     private String resultStatus;
 
-    public Over() {
+
+
+    public Match() {
         over = 0;
         ball = 0;
         run1 = 0;
@@ -26,7 +28,7 @@ public class Over {
         resultStatus = "";
     }
 
-    public Over(String team1, String team2, String tossStatus) {
+    public Match(String team1, String team2, String tossStatus) {
         this.team1 = team1;
         this.team2 = team2;
         this.tossStatus = tossStatus;
@@ -38,48 +40,30 @@ public class Over {
         wicket2 = 0;
         whichTeam = false;
         resultStatus = "";
-    }
-
-    public void setWhichTeam(boolean whichTeam) {
-        this.whichTeam = whichTeam;
-    }
-
-    public void setBall(int ball) {
-        this.ball = ball;
-    }
-
-    public void setOver(int over) {
-        this.over = over;
-    }
-
-
-
-    public void setResultStatus(String resultStatus) {
-        this.resultStatus = resultStatus;
-    }
-
-    public void setTeam1(String team1) {
-        this.team1 = team1;
-    }
-
-    public void setTeam2(String team2) {
-        this.team2 = team2;
-    }
-
-    public void setTossStatus(String tossStatus) {
-        this.tossStatus = tossStatus;
     }
 
     public boolean isWhichTeam() {
         return whichTeam;
     }
 
+    public void setWhichTeam(boolean whichTeam) {
+        this.whichTeam = whichTeam;
+    }
+
     public int getBall() {
         return ball;
     }
 
+    public void setBall(int ball) {
+        this.ball = ball;
+    }
+
     public int getOver() {
         return over;
+    }
+
+    public void setOver(int over) {
+        this.over = over;
     }
 
     public int getRun1() {
@@ -118,15 +102,31 @@ public class Over {
         return team1;
     }
 
+    public void setTeam1(String team1) {
+        this.team1 = team1;
+    }
+
     public String getTeam2() {
         return team2;
+    }
+
+    public void setTeam2(String team2) {
+        this.team2 = team2;
     }
 
     public String getTossStatus() {
         return tossStatus;
     }
 
+    public void setTossStatus(String tossStatus) {
+        this.tossStatus = tossStatus;
+    }
+
     public String getResultStatus() {
         return resultStatus;
+    }
+
+    public void setResultStatus(String resultStatus) {
+        this.resultStatus = resultStatus;
     }
 }

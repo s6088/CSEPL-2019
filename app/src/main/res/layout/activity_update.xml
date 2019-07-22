@@ -1,9 +1,217 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateActivity">
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".CreateActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Match Details"
+                android:textColor="@color/colorBlack"
+                android:textSize="30sp" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="12dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="1dp"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="7B vs 9B"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="120/10\t|\t100/10"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="overs 5.5"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_marginBottom="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="7B won by 20 runs"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="9B won the toss,c hoose field"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="8sp" />
+
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Update Details"
+                android:textColor="@color/colorBlack"
+                android:textSize="30sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox android:id="@+id/whichTeam"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="batting 2nd Team"/>
+
+
+
+                <EditText
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext"
+                    android:textColorHint="#212121"
+                    android:textColor="#696666"
+                    android:id="@+id/overText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="overs"
+                    android:maxLines="1"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext"
+                    android:textColorHint="#212121"
+                    android:textColor="#696666"
+                    android:id="@+id/runText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="runs"
+                    android:maxLines="1"/>
+
+
+
+                <EditText
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext"
+                    android:textColorHint="#212121"
+                    android:textColor="#696666"
+                    android:id="@+id/wicketText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="wickets"
+                    android:maxLines="1"/>
+
+            </LinearLayout>
+
+
+            <EditText
+                android:background="@drawable/edittext"
+                android:textColorHint="#696666"
+                android:textColor="#212121"
+                android:layout_margin="10dp"
+                android:id="@+id/resultText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="7B won the match by 20 runs"
+                android:maxLines="1"/>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:background="@drawable/createbtn"
+                    android:layout_margin="10dp"
+                    android:id="@+id/create"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Update"/>
+
+                <Button
+                    android:textColor="@color/colorPrimaryDark"
+                    android:background="@drawable/cancelbtn"
+                    android:layout_margin="10dp"
+                    android:id="@+id/forgot_password_button"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
