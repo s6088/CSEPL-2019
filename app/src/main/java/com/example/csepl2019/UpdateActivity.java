@@ -100,6 +100,20 @@ public class UpdateActivity extends AppCompatActivity {
                 overs.setText("Overs " + match.getOver() + "." + match.getBall());
                 result.setText(match.getResultStatus());
                 toss.setText(match.getTossStatus());
+                over.setText(match.getOver()+"");
+                ball.setText(match.getBall()+"");
+
+                if(match.isWhichTeam()) {
+                    checkBox.setChecked(true);
+                    run.setText(match.getRun1()+"");
+                    wicket.setText(match.getWicket1()+"");
+                }
+                else {
+                    checkBox.setChecked(false);
+                    run.setText(match.getRun2()+"");
+                    wicket.setText(match.getWicket2()+"");
+                }
+
             }
 
             @Override

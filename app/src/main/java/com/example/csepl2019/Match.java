@@ -123,4 +123,6 @@ public class Match {
     public void setResultStatus(String resultStatus) {
         this.resultStatus = resultStatus;
     }
+
+
 }
