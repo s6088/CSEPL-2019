@@ -56,7 +56,7 @@
                         android:textAlignment="center"
                         android:id="@+id/overs"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
+                        android:textSize="13sp" />
 
                     <TextView
                         android:layout_marginBottom="3dp"
@@ -65,7 +65,7 @@
                         android:textAlignment="center"
                         android:id="@+id/result"
                         android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
+                        android:textSize="13sp" />
 
                     <TextView
                         android:layout_marginBottom="8dp"
@@ -74,7 +74,7 @@
                         android:textAlignment="center"
                         android:id="@+id/toss"
                         android:textColor="@color/colorBlack"
-                        android:textSize="8sp" />
+                        android:textSize="10sp" />
 
 
 
@@ -83,7 +83,7 @@
 
 
             <TextView
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginBottom="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
 
                 <TextView
                     android:layout_marginTop="5dp"
-                    android:layout_weight="2"
+                    android:layout_weight="5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
@@ -117,12 +117,11 @@
                 <EditText
                     android:inputType="number"
                     android:layout_margin="5dp"
-                    android:background="@drawable/edittext"
                     android:textColorHint="#212121"
                     android:textColor="#696666"
                     android:id="@+id/overText"
                     android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"
                     android:maxLines="1"/>
 
@@ -143,12 +142,11 @@
                 <EditText
                     android:inputType="number"
                     android:layout_margin="5dp"
-                    android:background="@drawable/edittext"
                     android:textColorHint="#212121"
                     android:textColor="#696666"
                     android:id="@+id/ballText"
                     android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"
                     android:maxLines="1"/>
 
@@ -156,7 +154,7 @@
 
                 <TextView
                     android:layout_marginTop="5dp"
-                    android:layout_weight="2"
+                    android:layout_weight="5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
@@ -169,12 +167,11 @@
                 <EditText
                     android:inputType="number"
                     android:layout_margin="5dp"
-                    android:background="@drawable/edittext"
                     android:textColorHint="#212121"
                     android:textColor="#696666"
                     android:id="@+id/runText"
                     android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"
                     android:maxLines="1"/>
 
@@ -195,12 +192,11 @@
                 <EditText
                     android:inputType="number"
                     android:layout_margin="5dp"
-                    android:background="@drawable/edittext"
                     android:textColorHint="#212121"
                     android:textColor="#696666"
                     android:id="@+id/wicketText"
                     android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"
                     android:maxLines="1"/>
 
@@ -209,11 +205,8 @@
 
 
 
-
-
             <EditText
                 android:layout_margin="10dp"
-                android:background="@drawable/edittext"
                 android:textColorHint="#696666"
                 android:textColor="#212121"
                 android:id="@+id/resultText"
@@ -231,6 +224,7 @@
 
 
                 <CheckBox android:id="@+id/whichTeam"
+                    android:layout_margin="5dp"
                     android:textSize="20sp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -240,7 +234,7 @@
 
                 <Button
                     android:layout_margin="5dp"
-                    android:background="@drawable/createbtn"
+                    android:textColor="@color/colorPrimaryDark"
                     android:id="@+id/update"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -249,8 +243,6 @@
 
                 <Button
                     android:layout_margin="5dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:background="@drawable/cancelbtn"
                     android:id="@+id/delete"
                     android:layout_width="0dp"
                     android:layout_weight="1"

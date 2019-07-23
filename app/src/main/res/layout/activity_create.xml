@@ -30,22 +30,20 @@
 
 
             <EditText
-                android:background="@drawable/edittext"
                 android:textColorHint="#696666"
                 android:textColor="#212121"
                 android:layout_margin="10dp"
-                android:id="@+id/team1Text"
+                android:id="@+id/team1Edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Team Name"
                 android:maxLines="1"/>
 
             <EditText
-                android:background="@drawable/edittext"
                 android:textColorHint="#696666"
                 android:textColor="#212121"
                 android:layout_margin="10dp"
-                android:id="@+id/team2Text"
+                android:id="@+id/team2Edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Team Name"
@@ -53,26 +51,23 @@
 
 
             <EditText
-                android:background="@drawable/edittext"
                 android:textColorHint="#696666"
                 android:textColor="#212121"
                 android:layout_margin="10dp"
-                android:id="@+id/tossText"
+                android:id="@+id/tossStatusEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="9B won the toss, choose field"
                 android:maxLines="1"/>
 
             <LinearLayout
-                android:layout_marginTop="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
 
                 <Button
-                    android:background="@drawable/createbtn"
-                    android:layout_margin="10dp"
+                    android:textColor="@color/colorPrimaryDark"
                     android:id="@+id/createBtn"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -80,15 +75,11 @@
                     android:text="create"/>
 
                 <Button
-                    android:textColor="@color/colorPrimaryDark"
-                    android:background="@drawable/cancelbtn"
-                    android:layout_margin="10dp"
                     android:id="@+id/cancelBtn"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="cancel"/>
-
 
             </LinearLayout>
 

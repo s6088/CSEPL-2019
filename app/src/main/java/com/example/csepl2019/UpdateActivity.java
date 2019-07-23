@@ -112,21 +112,26 @@ public class UpdateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                match.setOver(Integer.parseInt(over.getText().toString().trim()));
-                match.setBall(Integer.parseInt(ball.getText().toString().trim()));
+                try {
 
-                if(checkBox.isChecked()){
-                    match.setWhichTeam(true);
-                    match.setRun1(Integer.parseInt(run.getText().toString().trim()));
-                    match.setWicket1(Integer.parseInt(wicket.getText().toString().trim()));
+                    match.setOver(Integer.parseInt(over.getText().toString().trim()));
+                    match.setBall(Integer.parseInt(ball.getText().toString().trim()));
+
+                    if (checkBox.isChecked()) {
+                        match.setWhichTeam(true);
+                        match.setRun1(Integer.parseInt(run.getText().toString().trim()));
+                        match.setWicket1(Integer.parseInt(wicket.getText().toString().trim()));
+                    } else {
+                        match.setWhichTeam(false);
+                        match.setRun2(Integer.parseInt(run.getText().toString().trim()));
+                        match.setWicket2(Integer.parseInt(wicket.getText().toString().trim()));
+                    }
+                    match.setResultStatus(resultEdit.getText().toString());
+                    reference.child(matchid).setValue(match);
                 }
-                else {
-                    match.setWhichTeam(false);
-                    match.setRun2(Integer.parseInt(run.getText().toString().trim()));
-                    match.setWicket2(Integer.parseInt(wicket.getText().toString().trim()));
+                catch (Exception e){
+                    Toast.makeText(UpdateActivity.this, "Operation Undone", Toast.LENGTH_LONG).show();
                 }
-                match.setResultStatus(resultEdit.getText().toString());
-                reference.child(matchid).setValue(match);
             }
         });
 
