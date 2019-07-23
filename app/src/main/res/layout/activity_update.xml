@@ -115,6 +115,7 @@
 
 
                 <EditText
+                    android:textAlignment="center"
                     android:inputType="number"
                     android:layout_margin="5dp"
                     android:textColorHint="#212121"
@@ -140,6 +141,7 @@
 
 
                 <EditText
+                    android:textAlignment="center"
                     android:inputType="number"
                     android:layout_margin="5dp"
                     android:textColorHint="#212121"
@@ -165,6 +167,7 @@
 
 
                 <EditText
+                    android:textAlignment="center"
                     android:inputType="number"
                     android:layout_margin="5dp"
                     android:textColorHint="#212121"
@@ -190,6 +193,7 @@
 
 
                 <EditText
+                    android:textAlignment="center"
                     android:inputType="number"
                     android:layout_margin="5dp"
                     android:textColorHint="#212121"
@@ -206,6 +210,7 @@
 
 
             <EditText
+                android:textAlignment="center"
                 android:layout_margin="10dp"
                 android:textColorHint="#696666"
                 android:textColor="#212121"
