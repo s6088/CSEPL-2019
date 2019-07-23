@@ -2,7 +2,8 @@ package com.example.csepl2019;
 
 public class Match {
 
-
+    private String id;
+    private long timestamp;
     private boolean whichTeam;
     private int ball;
     private int over;
@@ -28,18 +29,20 @@ public class Match {
         resultStatus = "";
     }
 
-    public Match(String team1, String team2, String tossStatus) {
-        this.team1 = team1;
-        this.team2 = team2;
-        this.tossStatus = tossStatus;
-        over = 0;
-        ball = 0;
-        run1 = 0;
-        wicket1 = 0;
-        run2 = 0;
-        wicket2 = 0;
-        whichTeam = false;
-        resultStatus = "";
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
     }
 
     public boolean isWhichTeam() {

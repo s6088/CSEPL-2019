@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -17,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,24 +51,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        reference.child("match").addValueEventListener(new ValueEventListener() {
+
+        reference.child("matches").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
                 matchList.clear();
                 values.clear();
-
-                for(DataSnapshot ymdSnapshot : dataSnapshot.getChildren()){
-
-                    for(DataSnapshot repSnapshot : ymdSnapshot.getChildren()){
-                        Match match = repSnapshot.getValue(Match.class);
-                        matchList.add(match);
-                        values.add(match.getTeam1() + " vs " + match.getTeam2());
+                int cnt = 1;
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    Match match = postSnapshot.getValue(Match.class);
+                    matchList.add(match);
                     }
+                Collections.reverse(matchList);
+                for(int i=0, j=matchList.size(); i<matchList.size(); i++, j--){
+                    Match match = matchList.get(i);
+                    values.add("Match\t" + j + "\t\t|\t" + match.getTeam1() + " vs " + match.getTeam2());
                 }
-
                 updateList();
-
             }
 
             @Override
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
 
 
     }
@@ -93,14 +95,11 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
-                // ListView Clicked item index
-                int itemPosition     = position;
 
-                // ListView Clicked item value
-                String  itemValue    = (String) listView.getItemAtPosition(position);
 
-                // Show Alert
-
+                Intent intent = new Intent(MainActivity.this, UpdateActivity.class);
+                intent.putExtra("matchid", matchList.get(position).getId());
+                startActivity(intent);
 
             }
 

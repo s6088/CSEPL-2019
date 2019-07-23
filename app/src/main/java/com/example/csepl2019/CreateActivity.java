@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import java.util.Date;
+import java.sql.Timestamp;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import com.google.firebase.database.ServerValue;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -38,12 +41,12 @@ public class CreateActivity extends AppCompatActivity {
         team2 = findViewById(R.id.team2Text);
         toss = findViewById(R.id.tossText);
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference("match");
+        reference = database.getReference("matches");
 
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CreateActivity.this, UpdateActivity.class);
+                Intent intent = new Intent(CreateActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -59,8 +62,15 @@ public class CreateActivity extends AppCompatActivity {
 
     public void createMatch(){
         String key = reference.push().getKey();
-        Match temp = new Match(team1.getText().toString().trim(), team2.getText().toString().trim(),  toss.getText().toString().trim());
-        reference.child(key).setValue(temp)
+        Match match = new Match();
+        match.setId(key);
+        match.setTeam1(team1.getText().toString().trim());
+        match.setTeam2(team2.getText().toString().trim());
+        match.setTossStatus(toss.getText().toString().trim());
+        match.setTimestamp(new Date().getTime());
+
+
+        reference.child(key).setValue(match)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
